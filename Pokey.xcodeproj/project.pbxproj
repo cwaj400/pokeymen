@@ -18,6 +18,7 @@
 		0297C42F262783E2001EA851 /* CustomPokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297C42E262783E2001EA851 /* CustomPokemonAPI.swift */; };
 		0297C433262789DC001EA851 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 0297C432262789DC001EA851 /* SwiftyJSON */; };
 		0297C43726278C14001EA851 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0297C43626278C14001EA851 /* Alamofire */; };
+		0297C43A2627A919001EA851 /* PokemonClickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297C4392627A919001EA851 /* PokemonClickViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		0297C420262733F6001EA851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0297C42726273437001EA851 /* Pokeymen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pokeymen.swift; path = ../../../../Desktop/pokey/Pokeymen.swift; sourceTree = "<group>"; };
 		0297C42E262783E2001EA851 /* CustomPokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPokemonAPI.swift; sourceTree = "<group>"; };
+		0297C4392627A919001EA851 /* PokemonClickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonClickViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				0297C42726273437001EA851 /* Pokeymen.swift */,
+				0297C4392627A919001EA851 /* PokemonClickViewController.swift */,
 				0297C412262733F6001EA851 /* AppDelegate.swift */,
 				0297C414262733F6001EA851 /* SceneDelegate.swift */,
 				0297C416262733F6001EA851 /* ViewController.swift */,
@@ -161,6 +164,7 @@
 			files = (
 				0297C417262733F6001EA851 /* ViewController.swift in Sources */,
 				0297C42826273437001EA851 /* Pokeymen.swift in Sources */,
+				0297C43A2627A919001EA851 /* PokemonClickViewController.swift in Sources */,
 				0297C413262733F6001EA851 /* AppDelegate.swift in Sources */,
 				0297C42F262783E2001EA851 /* CustomPokemonAPI.swift in Sources */,
 				0297C415262733F6001EA851 /* SceneDelegate.swift in Sources */,
