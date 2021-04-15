@@ -78,12 +78,25 @@ class PokemonDetailVC: UIViewController {
     func getAbilityNames() {
         // AlamoFire runs validation on it's own side, so I do not need to concern myself with 200 response calls. .validate() does this for me.
         AF.request("https://pokeapi.co/api/v2/pokemon/\(pokemon.number)").validate().responseJSON { response in
-            
+            // Here's some json manipulation to get the ability names using the api above. These api's should probably be more decentralised and not in the VC.
             let json = JSON(response.value!);
-            let jsonResult = JSON(json["abilities"]);
             
-            for (_, subJson):(String, JSON) in jsonResult {
-                print(json.string)
+            let jsonResult = JSON(json);
+            let abilitiesJson = jsonResult["abilities"]
+            
+            // Hard coding is bad I know, in the interest of time I have done so. I intend to change this hard coded data in the future, get screen size, do some math etc.
+            var yDecreases = 350
+            for (_, abilitiesJson):(String, JSON) in abilitiesJson {
+                    
+                let ability = abilitiesJson["ability"]["name"];
+                self.abilityNames.append(ability.string!.capitalized);
+                
+                let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+                label.center = CGPoint(x: 320, y: yDecreases)
+                label.textAlignment = .left
+                label.text = ability.string!.capitalized;
+                self.view.addSubview(label)
+                yDecreases -= 30;
             }
         }
     }
