@@ -11,15 +11,6 @@
         }
       },
       {
-        "package": "PokemonAPI",
-        "repositoryURL": "https://github.com/kinkofer/PokemonAPI",
-        "state": {
-          "branch": null,
-          "revision": "d0ca44f096fed584be4804abd164d8d5225d408a",
-          "version": "6.0.2"
-        }
-      },
-      {
         "package": "SwiftyJSON",
         "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON.git",
         "state": {
