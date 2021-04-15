@@ -107,10 +107,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             for (_, subJson):(String, JSON) in jsonResult {
                 
                 //TODO:- Type safe checks.
-                self.pokemenNames.append(subJson["name"].string!);
                 
                 let specificURL = subJson["url"].string!;
                 let name = subJson["name"].string!;
+                self.pokemenNames.append(name.capitalized)
                 
                 // Parse pokemon number from URL. I could have used a key in the above for, but the server side could change the digits around for some mad reason, and this would break my code.
                 let numberOfPoke  = specificURL.suffix(3).replacingOccurrences(of: "/", with: "");
@@ -136,4 +136,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
+}
+
+extension String {
+    func firstCharacterUpperCase() -> String? {
+        guard !isEmpty else { return nil }
+        let lowerCasedString = self.lowercased()
+        return lowerCasedString.replacingCharacters(in: lowerCasedString.startIndex...lowerCasedString.startIndex, with: String(lowerCasedString[lowerCasedString.startIndex]).uppercased())
+    }
 }
