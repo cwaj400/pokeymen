@@ -15,9 +15,10 @@ import Kingfisher;
 class PokemonDetailVC: UIViewController {
     
     var pokemon : Pokeyone!;
+    var abilityNames : [String] = [];
+    
     var inPokemonDetailVC:Bool!;
     
-    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var name: UILabel!
     
     var imgTick : Int = 0;
@@ -39,7 +40,7 @@ class PokemonDetailVC: UIViewController {
         back.append("\(self.pokemon.number)")
         back.append(".png");
         self.pokemonImagesArr = [front, back];
-        Timer.scheduledTimer(timeInterval: 0.3,
+        Timer.scheduledTimer(timeInterval: 0.4,
                                  target: self,
                                  selector: #selector(self.changeView),
                                  userInfo: nil,
@@ -55,7 +56,9 @@ class PokemonDetailVC: UIViewController {
         DispatchQueue.main.async {
             if self.inPokemonDetailVC {
                 self.inPokemonDetailVC = !self.inPokemonDetailVC;
+                
             }
+            self.getAbilityNames();
         }
         
     }
@@ -65,10 +68,23 @@ class PokemonDetailVC: UIViewController {
     @objc func changeView() {
         // Tiny bit of maths. imgTick is set to 0 initially, so view is pokemon back. 0 mod 2 is 0, so the pokemon image gets set to back.
         // Then imgTick gets incremented by one. when imgTick is 1, result gets set to 1, and then the front is set. I am using third party dependency Kingfisher to set the image view here.
-        var result = self.imgTick % 2;
+        let result = self.imgTick % 2;
         let st = pokemonImagesArr[result];
         let resultURL = URL(string: st);
         self.sprite.kf.setImage(with: resultURL);
         self.imgTick += 1
+    }
+    
+    func getAbilityNames() {
+        // AlamoFire runs validation on it's own side, so I do not need to concern myself with 200 response calls. .validate() does this for me.
+        AF.request("https://pokeapi.co/api/v2/pokemon/\(pokemon.number)").validate().responseJSON { response in
+            
+            let json = JSON(response.value!);
+            let jsonResult = JSON(json["abilities"]);
+            
+            for (_, subJson):(String, JSON) in jsonResult {
+                print(json.string)
+            }
+        }
     }
 }

@@ -90,7 +90,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK:- UTILITY FUNCTIONS
     func fetchAllPokemen() {
         //TODO:- add headers etc.
-        //TODO:- convert to service.
+        //TODO:- convert to service?
         
         // AlamoFire runs validation on it's own side, so I do not need to concern myself with 200 response calls. .validate() does this for me.
         AF.request("https://pokeapi.co/api/v2/pokemon").validate().responseJSON { response in
@@ -136,12 +136,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
-}
-
-extension String {
-    func firstCharacterUpperCase() -> String? {
-        guard !isEmpty else { return nil }
-        let lowerCasedString = self.lowercased()
-        return lowerCasedString.replacingCharacters(in: lowerCasedString.startIndex...lowerCasedString.startIndex, with: String(lowerCasedString[lowerCasedString.startIndex]).uppercased())
-    }
 }
