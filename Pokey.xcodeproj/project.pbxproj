@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		0264E1FE262858CD002023DD /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264E1FD262858CD002023DD /* PokemonDetailVC.swift */; };
 		0264E204262861CD002023DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0264E203262861CD002023DD /* Assets.xcassets */; };
+		0264E213262875E2002023DD /* Pokeymen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264E212262875E2002023DD /* Pokeymen.swift */; };
+		0264E21826287CE5002023DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0264E21726287CE5002023DD /* Kingfisher */; };
 		0297C413262733F6001EA851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297C412262733F6001EA851 /* AppDelegate.swift */; };
 		0297C415262733F6001EA851 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297C414262733F6001EA851 /* SceneDelegate.swift */; };
 		0297C417262733F6001EA851 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297C416262733F6001EA851 /* ViewController.swift */; };
 		0297C41A262733F6001EA851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0297C418262733F6001EA851 /* Main.storyboard */; };
 		0297C41F262733F6001EA851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0297C41D262733F6001EA851 /* LaunchScreen.storyboard */; };
-		0297C42826273437001EA851 /* Pokeymen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297C42726273437001EA851 /* Pokeymen.swift */; };
 		0297C433262789DC001EA851 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 0297C432262789DC001EA851 /* SwiftyJSON */; };
 		0297C43726278C14001EA851 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0297C43626278C14001EA851 /* Alamofire */; };
 /* End PBXBuildFile section */
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		0264E1FD262858CD002023DD /* PokemonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
 		0264E203262861CD002023DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
+		0264E212262875E2002023DD /* Pokeymen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokeymen.swift; sourceTree = "<group>"; };
 		0297C40F262733F6001EA851 /* Pokey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0297C412262733F6001EA851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0297C414262733F6001EA851 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +31,6 @@
 		0297C419262733F6001EA851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0297C41E262733F6001EA851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0297C420262733F6001EA851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0297C42726273437001EA851 /* Pokeymen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pokeymen.swift; path = ../../../../Desktop/pokey/Pokeymen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0264E21826287CE5002023DD /* Kingfisher in Frameworks */,
 				0297C43726278C14001EA851 /* Alamofire in Frameworks */,
 				0297C433262789DC001EA851 /* SwiftyJSON in Frameworks */,
 			);
@@ -64,7 +66,7 @@
 		0297C411262733F6001EA851 /* Pokey */ = {
 			isa = PBXGroup;
 			children = (
-				0297C42726273437001EA851 /* Pokeymen.swift */,
+				0264E212262875E2002023DD /* Pokeymen.swift */,
 				0297C412262733F6001EA851 /* AppDelegate.swift */,
 				0297C414262733F6001EA851 /* SceneDelegate.swift */,
 				0297C420262733F6001EA851 /* Info.plist */,
@@ -96,6 +98,7 @@
 			packageProductDependencies = (
 				0297C432262789DC001EA851 /* SwiftyJSON */,
 				0297C43626278C14001EA851 /* Alamofire */,
+				0264E21726287CE5002023DD /* Kingfisher */,
 			);
 			productName = Pokey;
 			productReference = 0297C40F262733F6001EA851 /* Pokey.app */;
@@ -127,6 +130,7 @@
 			packageReferences = (
 				0297C431262789DC001EA851 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				0297C43526278C14001EA851 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				0264E21626287CE4002023DD /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 0297C410262733F6001EA851 /* Products */;
 			projectDirPath = "";
@@ -156,8 +160,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0297C417262733F6001EA851 /* ViewController.swift in Sources */,
-				0297C42826273437001EA851 /* Pokeymen.swift in Sources */,
 				0297C413262733F6001EA851 /* AppDelegate.swift in Sources */,
+				0264E213262875E2002023DD /* Pokeymen.swift in Sources */,
 				0264E1FE262858CD002023DD /* PokemonDetailVC.swift in Sources */,
 				0297C415262733F6001EA851 /* SceneDelegate.swift in Sources */,
 			);
@@ -361,6 +365,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0264E21626287CE4002023DD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.2.1;
+			};
+		};
 		0297C431262789DC001EA851 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -380,6 +392,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0264E21726287CE5002023DD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0264E21626287CE4002023DD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		0297C432262789DC001EA851 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0297C431262789DC001EA851 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;

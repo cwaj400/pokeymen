@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Foundation
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
@@ -86,6 +87,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK:- UTILITY FUNCTIONS
     func fetchAllPokemen() {
         //TODO:- add headers etc.
+        //TODO:- convert to service.
         
         // AlamoFire runs validation on it's own side, so I do not need to concern myself with 200 response calls. .validate() does this for me.
         AF.request("https://pokeapi.co/api/v2/pokemon").validate().responseJSON { response in
@@ -107,8 +109,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let specificURL = subJson["url"].string!;
                 let name = subJson["name"].string!;
                 
-                let numberOfPoke  = specificURL.suffix(3);
-                print(numberOfPoke)
+                // Parse pokemon number from URL. I could have used a key in the above for, but the server side could change the digits around for some mad reason, and this would break my code.
+                let numberOfPoke  = specificURL.suffix(3).replacingOccurrences(of: "/", with: "");
+                
                 self.pokemen.append(Pokeyone(name: name, number: String(numberOfPoke)));
             }
             
