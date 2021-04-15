@@ -80,7 +80,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     detailVC.pokemon = self.pokemen[selectedRow];
                     detailVC.name.text = self.pokemenNames[selectedRow]
                     detailVC.inPokemonDetailVC = true;
-                    print("got to end bye.")
                 }
             }
         }

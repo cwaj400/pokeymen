@@ -18,7 +18,7 @@ class PokemonDetailVC: UIViewController {
     var inPokemonDetailVC:Bool!;
     
     @IBOutlet weak var name: UILabel!
-    var imageURL = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/");
+    
     
     @IBOutlet weak var sprite: UIImageView!
     @IBAction func backButton(_ sender: Any) {
@@ -37,27 +37,26 @@ class PokemonDetailVC: UIViewController {
         DispatchQueue.main.async {
             if self.inPokemonDetailVC {
                 self.inPokemonDetailVC = !self.inPokemonDetailVC;
+                
                 self.setURL();
-                print("done")
             }
-            
-            
-            print("in new vc")
         }
+        
     }
     
     //MARK:- Utility Functions
     
     func setURL() {
-        self.imageURL?.appendPathComponent(self.pokemon?.number ?? "1.png");
-        self.imageURL?.appendPathComponent(".png/");
+        var result = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/";
         
-        self.sprite.kf.setImage(with: self.imageURL);
-        
-        print(self.pokemon?.name)
-        
-        self.name.text = ""
-        print(imageURL?.absoluteURL)
+        result.append("\(pokemon.number)")
+        result.append(".png");
+
+        let resultURL = URL(string: result);
+        self.sprite.kf.setImage(with: resultURL)
+        print(resultURL!);
+        //self.sprite.setImage(with: result)
+        //self.sprite.kf.setImage(with: resultURL);
 
     }
 }
