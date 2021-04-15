@@ -59,6 +59,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = filteredData[indexPath.row];
         
+        cell.imageView?.image = UIImage(named: "1024")
+        
         return cell;
     }
     

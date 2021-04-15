@@ -86,6 +86,7 @@ class PokemonDetailVC: UIViewController {
             
             // Hard coding is bad I know, in the interest of time I have done so. I intend to change this hard coded data in the future, get screen size, do some math etc.
             var yDecreases = 350
+            //https://developer.apple.com/library/archive/documentation/General/Conceptual/Devpedia-CocoaApp/CoordinateSystem.html
             for (_, abilitiesJson):(String, JSON) in abilitiesJson {
                     
                 let ability = abilitiesJson["ability"]["name"];
