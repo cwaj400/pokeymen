@@ -1,0 +1,12 @@
+abedfe2 - Will Angell-James, 11 minutes ago : added logo to cell
+75ab09d - Will Angell-James, 29 minutes ago : fixed constraints
+75dbaae - Will Angell-James, 66 minutes ago : Created dynamic labels and got abbilities from fetch
+ddb398c - Will Angell-James, 2 hours ago : Started character abilities
+e46695b - Will Angell-James, 2 hours ago : Forgot to change branch but made image animation
+740e0f3 - Will Angell-James, 3 hours ago : Functional image display using kf
+487c772 - Will Angell-James, 9 hours ago : started sprite creation
+4134739 - Will Angell-James, 10 hours ago : Adding struct and kf
+5d07288 - Will Angell-James, 10 hours ago : Rejig logic and parse url of fetch
+997e537 - Will Angell-James, 12 hours ago : Functional segue and name transfer
+aca2a25 - Will Angell-James, 25 hours ago : commiting latest
+c459ff5 - Will Angell-James, 25 hours ago : push from main
