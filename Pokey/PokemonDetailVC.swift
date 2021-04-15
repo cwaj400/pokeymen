@@ -13,9 +13,12 @@ import SwiftyJSON
 import Kingfisher;
 
 class PokemonDetailVC: UIViewController {
-
+    
+    var pokemon : Pokeyone!;
+    var inPokemonDetailVC:Bool!;
+    
     @IBOutlet weak var name: UILabel!
-    let imageURL = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png");
+    var imageURL = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/");
     
     @IBOutlet weak var sprite: UIImageView!
     @IBAction func backButton(_ sender: Any) {
@@ -27,11 +30,34 @@ class PokemonDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        sprite.kf.setImage(with: imageURL);
         
-        self.name.text = ""
-        print("in pokemon details")
-        //blah
+        
+        pokemon = Pokeyone(name: " ", number: " ");
+        
+        DispatchQueue.main.async {
+            if self.inPokemonDetailVC {
+                self.inPokemonDetailVC = !self.inPokemonDetailVC;
+                self.setURL();
+                print("done")
+            }
+            
+            
+            print("in new vc")
+        }
     }
     
+    //MARK:- Utility Functions
+    
+    func setURL() {
+        self.imageURL?.appendPathComponent(self.pokemon?.number ?? "1.png");
+        self.imageURL?.appendPathComponent(".png/");
+        
+        self.sprite.kf.setImage(with: self.imageURL);
+        
+        print(self.pokemon?.name)
+        
+        self.name.text = ""
+        print(imageURL?.absoluteURL)
+
+    }
 }

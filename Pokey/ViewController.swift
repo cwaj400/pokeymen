@@ -58,6 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = filteredData[indexPath.row];
+        
         return cell;
     }
     
@@ -76,7 +77,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 let detailVC = segue.destination as! PokemonDetailVC
                 //https://stackoverflow.com/questions/44324595/difference-between-dispatchqueue-main-async-and-dispatchqueue-main-sync
                 DispatchQueue.main.async {
+                    detailVC.pokemon = self.pokemen[selectedRow];
                     detailVC.name.text = self.pokemenNames[selectedRow]
+                    detailVC.inPokemonDetailVC = true;
+                    print("got to end bye.")
                 }
             }
         }
