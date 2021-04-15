@@ -51,7 +51,7 @@ class PokemonDetailVC: UIViewController {
         super.viewDidLoad();
         
         
-        pokemon = Pokeyone(name: " ", number: " ");
+        pokemon = Pokeyone(name: " ", number: " ", imageURL: " ");
         
         DispatchQueue.main.async {
             if self.inPokemonDetailVC {

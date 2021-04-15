@@ -13,13 +13,9 @@ struct Pokeyone: Codable {
     let number: String;
     var imageURL: String;
     
-    init(name : String, number : String) {
+    init(name : String, number : String, imageURL : String) {
         self.name = name;
         self.number = number;
-        self.imageURL = "";
-    }
-    
-    mutating func setUrl(url: String) {
-        self.imageURL = url;
+        self.imageURL = imageURL;
     }
 }

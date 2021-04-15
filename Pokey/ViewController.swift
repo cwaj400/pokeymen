@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Foundation
+import Kingfisher
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
@@ -22,6 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var filteredData: [String]! = [];
     var searchController: UISearchController!;
     
+    @IBOutlet weak var pokeImage: UIImageView!
     var pokemen : [Pokeyone] = [];
     var pokemenNames : [String] = [];
     //let customAPI = CustomPokemonAPI();
@@ -41,6 +43,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         definesPresentationContext = true
         fetchAllPokemen();
         
+        
+        
         tableView?.reloadData();
     }
     
@@ -58,8 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = filteredData[indexPath.row];
-        
-        cell.imageView?.image = UIImage(named: "1024")
+        cell.imageView?.image = UIImage(named: "pokeball")
         
         return cell;
     }
@@ -87,6 +90,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func setImages(pokemon: Pokeyone) {
+
+        
+    }
     
     
     //MARK:- UTILITY FUNCTIONS
@@ -117,7 +124,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 // Parse pokemon number from URL. I could have used a key in the above for, but the server side could change the digits around for some mad reason, and this would break my code.
                 let numberOfPoke  = specificURL.suffix(3).replacingOccurrences(of: "/", with: "");
                 
-                self.pokemen.append(Pokeyone(name: name, number: String(numberOfPoke)));
+                var front = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/";
+                front.append(String(numberOfPoke));
+                front.append(".png");
+                
+                let newPokemon = Pokeyone(name: name, number: String(numberOfPoke), imageURL: front)
+                
+
+                self.pokemen.append(newPokemon);
             }
             
         }
