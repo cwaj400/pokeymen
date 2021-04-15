@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0264E1FE262858CD002023DD /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0264E1FD262858CD002023DD /* PokemonDetailVC.swift */; };
+		0264E204262861CD002023DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0264E203262861CD002023DD /* Assets.xcassets */; };
 		0297C413262733F6001EA851 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297C412262733F6001EA851 /* AppDelegate.swift */; };
 		0297C415262733F6001EA851 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297C414262733F6001EA851 /* SceneDelegate.swift */; };
 		0297C417262733F6001EA851 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297C416262733F6001EA851 /* ViewController.swift */; };
 		0297C41A262733F6001EA851 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0297C418262733F6001EA851 /* Main.storyboard */; };
-		0297C41C262733F6001EA851 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0297C41B262733F6001EA851 /* Assets.xcassets */; };
 		0297C41F262733F6001EA851 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0297C41D262733F6001EA851 /* LaunchScreen.storyboard */; };
 		0297C42826273437001EA851 /* Pokeymen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0297C42726273437001EA851 /* Pokeymen.swift */; };
 		0297C433262789DC001EA851 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 0297C432262789DC001EA851 /* SwiftyJSON */; };
@@ -21,12 +21,12 @@
 
 /* Begin PBXFileReference section */
 		0264E1FD262858CD002023DD /* PokemonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
+		0264E203262861CD002023DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
 		0297C40F262733F6001EA851 /* Pokey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0297C412262733F6001EA851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0297C414262733F6001EA851 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0297C416262733F6001EA851 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0297C419262733F6001EA851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0297C41B262733F6001EA851 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0297C41E262733F6001EA851 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0297C420262733F6001EA851 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0297C42726273437001EA851 /* Pokeymen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pokeymen.swift; path = ../../../../Desktop/pokey/Pokeymen.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 				0297C420262733F6001EA851 /* Info.plist */,
 				0297C416262733F6001EA851 /* ViewController.swift */,
 				0297C418262733F6001EA851 /* Main.storyboard */,
-				0297C41B262733F6001EA851 /* Assets.xcassets */,
+				0264E203262861CD002023DD /* Assets.xcassets */,
 				0297C41D262733F6001EA851 /* LaunchScreen.storyboard */,
 				0264E1FD262858CD002023DD /* PokemonDetailVC.swift */,
 			);
@@ -143,7 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0297C41F262733F6001EA851 /* LaunchScreen.storyboard in Resources */,
-				0297C41C262733F6001EA851 /* Assets.xcassets in Resources */,
+				0264E204262861CD002023DD /* Assets.xcassets in Resources */,
 				0297C41A262733F6001EA851 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
