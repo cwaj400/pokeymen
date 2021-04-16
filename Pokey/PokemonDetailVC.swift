@@ -14,18 +14,17 @@ import Kingfisher;
 
 class PokemonDetailVC: UIViewController {
     
+    //MARK:- Outlets.
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var sprite: UIImageView!
+    
+    //MARK:- Variables.
     var pokemon : Pokeyone!;
     var abilityNames : [String] = [];
-    
     var inPokemonDetailVC:Bool!;
-    
-    @IBOutlet weak var name: UILabel!
-    
     var imgTick : Int = 0;
-    
     var pokemonImagesArr : [String]!;
     
-    @IBOutlet weak var sprite: UIImageView!
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -40,6 +39,8 @@ class PokemonDetailVC: UIViewController {
         back.append("\(self.pokemon.number)")
         back.append(".png");
         self.pokemonImagesArr = [front, back];
+        
+        // Timer used for Pokemon animation.
         Timer.scheduledTimer(timeInterval: 0.4,
                                  target: self,
                                  selector: #selector(self.changeView),
@@ -50,10 +51,10 @@ class PokemonDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         
-        
         pokemon = Pokeyone(name: " ", number: " ", imageURL: " ");
         
         DispatchQueue.main.async {
+            // Practical boolean helper which I ended up not using.
             if self.inPokemonDetailVC {
                 self.inPokemonDetailVC = !self.inPokemonDetailVC;
                 
@@ -64,7 +65,6 @@ class PokemonDetailVC: UIViewController {
     }
     
     //MARK:- Utility Functions
-    
     @objc func changeView() {
         // Tiny bit of maths. imgTick is set to 0 initially, so view is pokemon back. 0 mod 2 is 0, so the pokemon image gets set to back.
         // Then imgTick gets incremented by one. when imgTick is 1, result gets set to 1, and then the front is set. I am using third party dependency Kingfisher to set the image view here.

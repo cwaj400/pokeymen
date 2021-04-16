@@ -13,27 +13,21 @@ import Kingfisher
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
-
-    
-    
     //MARK:- Outlets
-    
-    //@IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+    
+    //MARK:- Variables
     var filteredData: [String]! = [];
     var searchController: UISearchController!;
-    
-    @IBOutlet weak var pokeImage: UIImageView!
     var pokemen : [Pokeyone] = [];
     var pokemenNames : [String] = [];
-    //let customAPI = CustomPokemonAPI();
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self;
         tableView.dataSource = self;
 
-        //I programatically created a search bar because it made filtering results using updateSearchResults() much easier.
+        // I programatically created a search bar because it made filtering results using updateSearchResults() much easier.
         searchController = UISearchController(searchResultsController: nil);
         searchController.searchResultsUpdater = self;
         
@@ -43,21 +37,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         definesPresentationContext = true
         fetchAllPokemen();
         
-        
-        
         tableView?.reloadData();
     }
     
     
     //MARK:- SETUP.
-    //TableViewDataSource inherited method
+    // TableViewDataSource inherited method
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        //Return data filtered from the search bar.
+        // Return data filtered from the search bar.
         return filteredData.count;
     }
     
-    //TableViewDataSource inherited method
+    // TableViewDataSource inherited method
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -90,22 +82,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func setImages(pokemon: Pokeyone) {
-
-        
-    }
-    
     
     //MARK:- UTILITY FUNCTIONS
     func fetchAllPokemen() {
-        //TODO:- add headers etc.
-        //TODO:- convert to service?
         
-        // AlamoFire runs validation on it's own side, so I do not need to concern myself with 200 response calls. .validate() does this for me.
+        // AlamoFire runs validation on it's own side, so I do not need to concern myself with 200 response calls. .validate() does this for me. I thought about creating a dedicated service but decided against it for this task as it seemed overkill.
         AF.request("https://pokeapi.co/api/v2/pokemon").validate().responseJSON { response in
             DispatchQueue.main.async {
-                //I tried creating a completion handler here but failed for some reason. This seems like a suitable work-around.
-                //Once data has been fetched, I set filteredData (the main viewing data) as a duplicate to pokemon array.
+                // I tried creating a completion handler here but failed for some reason. This seems like a suitable work-around.
+                // Once data has been fetched, I set filteredData (the main viewing data) as a duplicate to pokemon array.
                 self.filteredData = self.pokemenNames
                 self.tableView.reloadData();
             }
@@ -114,8 +99,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let jsonResult = JSON(json["results"]);
             
             for (_, subJson):(String, JSON) in jsonResult {
-                
-                //TODO:- Type safe checks.
                 
                 let specificURL = subJson["url"].string!;
                 let name = subJson["name"].string!;
